@@ -1,0 +1,22 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "description": "this is the test package",
+  "main": "index.js",
+  "scripts": {
+    "start": ""
+  },
+  "keywords": [
+    "angular",
+    "node"
+  ],
+  "author": "Edureka",
+  "license": "ISC",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "zone.js": "^0.10.2"
+  },
+  "devDependencies": {
+    "karma": "^4.4.1"
+  }
+}

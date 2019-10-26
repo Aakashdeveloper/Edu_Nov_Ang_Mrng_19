@@ -1,0 +1,101 @@
+1 Full Stack Application
+    70% concept
+
+Template Forms
+Reactive Forms
+Login-logout(JWT)
+Test Application
+------
+Deployment
+> Nginx
+> Docker
+> Git
+----------------
+> Html/Css/Bootrstrap
+> JavaScript
+> https://code.visualstudio.com/
+> NodeJs > https://nodejs.org/en/
+> GitHub Account > https://github.com/
+> Follow > https://github.com/Aakashdeveloper
+
+Open Source
+
+
+package.json
+
+Json>JavaScript Object Notation
+[
+    {
+        name:"John",
+        class:"AI"
+    },
+    {
+        name:"Eva",
+        class:"UI"
+    }
+]
+
+/************************
+    Step For Package.json
+**************************/
+> Navigate to the folder using cmd/Terminal
+> npm init
+> "Answer all Questions"
+> type "yes"
+
+// Local package
+// Global package=> build, start, compile
+
+/************************
+    Step to install localpackage
+**************************/
+> Navigate to the folder using cmd/Terminal
+> npm install <packagename>/npm i <packagename>
+  npm install <packagename> --save
+
+   npm i karma --save-dev
+
+/************************
+    Step to install globalpackage
+**************************/
+Win
+> Start cmd as admin
+> npm i -g @aakashdeveloper/create-node-app
+
+Mac/Linux
+> Start your Terminal
+> sudo npm i -g @aakashdeveloper/create-node-app
+
+/************************
+    Step to setup angular app
+**************************/
+Win
+> Start cmd as admin
+> npm i -g @angular/cli
+---------------------------
+> Navigate to the folder using cmd
+> ng new <app name>
+> cd <app name>
+> npm start
+> localhost:4200
+
+Mac/Linux
+> Start your Terminal
+> sudo npm i -g @angular/cli
+------------------------------
+> Navigate to the folder using cmd
+> ng new <app name>
+> cd <app name>
+> npm start
+> localhost:4200
+
+
+grid basic
+alerts
+button
+glyphicon
+panels
+navbar
+Forms
+modal
+table
