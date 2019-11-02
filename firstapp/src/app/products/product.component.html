@@ -1,0 +1,49 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{title}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                Filter By:
+            </div>
+            <div class="col-md-4">
+                <input type="text" [(ngModel)]="userInput"/>
+            </div>
+            {{userInput}}
+        </div>
+        {{showImage}}
+        <div class="table-responsive">
+            <table class="table" *ngIf="showTable">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-success"
+                                (click)="toggleImage()">
+                                Show Image
+                            </button>
+                        </th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prod of products">
+                        <td>
+                            <img [src]="prod.imageUrl"
+                            *ngIf="showImage" />
+                        </td>
+                        <td>{{prod.productName}}</td>
+                        <td>{{prod.productCode}}</td>
+                        <td>{{prod.releaseDate}}</td>
+                        <td>{{prod.price}}</td>
+                        <td>{{prod.starRating}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -99,3 +99,37 @@ navbar
 Forms
 modal
 table
+
+Module=>Parent of the app
+Component=> Logic html & css
+Pipe=> run time Data Change
+Service=> All external connection
+Directive=> Small portion of page
+Inbuilt/Structorl / custome
+Routing=>Navigate between pages
+
+
+
+angular.json => main.ts => app.module.ts => app.component.ts
+            Make HTML Available
+
+            Index.html
+
+/////Data Binding///////
+One Way => 
+            Data Binding    {{}}
+            Property Binding []
+            Event Binding ()
+Two Way Binding    [()]
+
+
+//Data type
+String  ="",''
+Number  =76786
+Boolean = true/ false
+
+*ngIf = Boolean
+if true will show
+if false will hide
+
+
