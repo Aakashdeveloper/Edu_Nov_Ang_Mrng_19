@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { ProductComponent } from './products/product.component';
+import { MyUpperPipe } from './products/myUpper.pipe';
+import { DiscountPipe } from './products/myDiscountPipe';
+import { ProductSearchPipe } from './products/myfilter.pipe';
 
 @NgModule({
     // All module will declare here
@@ -16,7 +19,10 @@ import { ProductComponent } from './products/product.component';
     declarations: [
         AppComponent,
         HomeComponent,
-        ProductComponent
+        ProductComponent,
+        MyUpperPipe,
+        DiscountPipe,
+        ProductSearchPipe
     ],
 
     // All Services

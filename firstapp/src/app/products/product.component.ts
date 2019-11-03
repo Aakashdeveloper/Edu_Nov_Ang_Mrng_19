@@ -1,16 +1,32 @@
 import { Component} from '@angular/core';
+import { IProduct } from './product.model';
 
 @Component({
     selector: 'app-product',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    // styles: ['thead{color:teal}', 'td{color:tomato}']
+    styleUrls: ['./product.component.css'],
+    styles: [
+        `.online{
+            background-color:wheat
+        }`
+    ]
 })
 
 export class ProductComponent {
+
     title: string = 'Product App';
     showTable = true;
     showImage = false;
     userInput;
-    products: any[] = [
+    serverStatus = 'offline';
+    currencynamee = 'INR';
+
+    constructor() {
+        this.serverStatus = Math.random() < 0.5 ? 'Online' : 'Offline';
+    }
+
+    products: IProduct[] = [
         {
             _id: '5a05dacc734d1d68d42d31f3',
             productId: 1,
@@ -32,11 +48,26 @@ export class ProductComponent {
             "price": 32.99,
             "starRating": 4.2,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+          },
+          {
+            _id: '5a05dacc734d1d68d42d31f3',
+            productId: 1,
+            "productName": "Leaf Rake",
+            "productCode": "GDN-0011",
+            "releaseDate": "March 19, 2016",
+            "description": "Leaf rake with 48-inch wooden handle.",
+            "price": 19.95,
+            "starRating": 3.5,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
           }
     ];
 
     toggleImage(): void {
         this.showImage = !this.showImage;
+    }
+
+    getColor() {
+        return this.serverStatus === 'Online' ? 'green' : 'red';
     }
 
 }

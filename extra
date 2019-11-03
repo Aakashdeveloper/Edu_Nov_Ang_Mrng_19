@@ -133,3 +133,118 @@ if true will show
 if false will hide
 
 
+///////////
+var a = 10
+a > 10 ? "hi":"bie"
+
+a>10? a+1:a-1
+
+https://www.codecademy.com/learn
+
+
+external Css < styletag < inline Css
+
+
+///////////////////
+var a = 10
+var b = "my age is "+a > my age is 10
+var c = `my age is ${a}` > my age is 10
+
+Math.floor(Math.random()*(max-min))+min
+
+Math.floor(Math.random()*(10-1))+1
+
+
+/*********************
+        Pipe
+************************/
+uppercase
+lowercase
+curreny
+date
+percentage
+titlecase
+
+/***********************
+    Filter & map &IndexOf
+***************************/
+
+var a = ['a','b','c','g']
+undefined
+a.indexOf('c')
+2
+a.indexOf('z')
+-1
+a.indexOf('h')
+-1
+a.indexOf('g')
+3
+
+var a = [1,2,3,4,5]
+
+a.filter((a) => { return a%2==0 })
+a.map((a) => {return a*2})
+a.filter((a) => {return a*2})
+
+
+function add(a,b){
+    return a+b
+}
+
+add(1,2)
+
+var add = (a,b) => { return a+b }
+
+
+var b = [0,1,2,3]
+//only return values for which condition is true
+b.filter((data) => {return data*1})
+[1,2,3]
+
+// Map will return all value
+b.map((data) => {return data*1})
+[0,1,2,3]
+
+
+/////////
+component
+module
+Binding
+css
+Directive
+custome pipe
+pipe
+interface
+constructor
+bootstrap
+--------
+input/output
+services
+Routing
+Directive
+Gaurd 
+
+-----
+template form
+reactive form
+login/logout
+testing
+deployment
+
+localization
+i18en
+
+
+/********
+    Git
+******
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/testgit.git
+git push -u origin master
+
+
+git add .
+git commit -m "a"
+git push
