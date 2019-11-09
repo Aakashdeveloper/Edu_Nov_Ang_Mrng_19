@@ -248,3 +248,22 @@ git push -u origin master
 git add .
 git commit -m "a"
 git push
+
+
+input => Property (to recive value from parant to child)
+out => Event (to send value from child to parant(Callback))
+
+
+var a = 10
+var b = "my age is " + 10
+var c = `my age is ${a}`
+
+/********
+    CLI
+******
+
+ng g c home /ng generate component home
+ng g s home /ng generate service home
+ng g p home /ng generate pipe home
+ng g d home /ng generate directive home
+ng g m home /ng generate module home

@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy} from '@angular/core';
 import { IProduct } from './product.model';
+import { ProductService } from './product.service';
 
 @Component({
     selector: 'app-product',
@@ -13,54 +14,38 @@ import { IProduct } from './product.model';
     ]
 })
 
-export class ProductComponent {
+export class ProductComponent implements OnInit, OnChanges, OnDestroy {
 
     title: string = 'Product App';
     showTable = true;
     showImage = false;
+    imageWidth = 100;
     userInput;
     serverStatus = 'offline';
     currencynamee = 'INR';
+    products: IProduct[];
 
-    constructor() {
+    constructor(private productService: ProductService) {
+        console.log('>>>>>> constructor<<<<<<<<<');
         this.serverStatus = Math.random() < 0.5 ? 'Online' : 'Offline';
     }
 
-    products: IProduct[] = [
-        {
-            _id: '5a05dacc734d1d68d42d31f3',
-            productId: 1,
-            "productName": "Leaf Rake",
-            "productCode": "GDN-0011",
-            "releaseDate": "March 19, 2016",
-            "description": "Leaf rake with 48-inch wooden handle.",
-            "price": 19.95,
-            "starRating": 3.5,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-          },
-          {
-            "_id": "5a05daec734d1d68d42d32ca",
-            "productId": 2,
-            "productName": "Garden Cart",
-            "productCode": "GDN-0023",
-            "releaseDate": "March 18, 2016",
-            "description": "15 gallon capacity rolling garden cart",
-            "price": 32.99,
-            "starRating": 4.2,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-          },
-          {
-            _id: '5a05dacc734d1d68d42d31f3',
-            productId: 1,
-            "productName": "Leaf Rake",
-            "productCode": "GDN-0011",
-            "releaseDate": "March 19, 2016",
-            "description": "Leaf rake with 48-inch wooden handle.",
-            "price": 19.95,
-            "starRating": 3.5,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-          }
-    ];
+    ngOnInit() {
+        console.log('>>>>>> ngOnInit<<<<<<<<<');
+        // this.products = this.productService.getProduct();
+        this.productService.getProduct()
+            .subscribe((data) => this.products = data);
+    }
+
+    ngOnChanges() {
+        console.log('>>>>>> ngOnChange<<<<<<<<<');
+    }
+
+
+    ngOnDestroy() {
+        console.log('>>>>>> ngOnDestory<<<<<<<<<');
+    }
+
 
     toggleImage(): void {
         this.showImage = !this.showImage;
@@ -70,4 +55,8 @@ export class ProductComponent {
         return this.serverStatus === 'Online' ? 'green' : 'red';
     }
 
+    dataRecive(message: string) {
+        this.title = 'Products Listing>>>> ' + message;
+    }
 }
+

@@ -38,15 +38,20 @@
                     <tr *ngFor="let prod of products | productSearch:userInput">
                         <td>
                             <img [src]="prod.imageUrl"
+                            [style.width.px]="imageWidth"
                             *ngIf="showImage" />
                         </td>
-                        <td >{{prod.productName | myTextUpper:'lower'}}</td>
+                        <td appChangeColor>{{prod.productName | myTextUpper:'lower'}}</td>
                         <td>{{prod.productCode |  myTextUpper:'upper'}}</td>
                         <td>{{prod.releaseDate | date}}</td>
                         <td [ngStyle]="{'background-color':prod.price<20?'lightpink':'lightgreen'}">
                             {{prod.price | discount | currency:'INR'  }}
                         </td>
-                        <td>{{prod.starRating}}</td>
+                        <td>
+                            <app-star [rating]="prod.starRating"
+                            (ratingClicked)="dataRecive($event)">
+                            </app-star>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -57,6 +62,7 @@
     </div>
 </div>
 
+<!--
 <div class="row">
     <div class="col-md-4 col-xs-12 col-sm-6">
         <input type="text"/>
@@ -82,3 +88,4 @@
         responsive, mobile-first projects on the web.</p>
 </div>
 
+-->
