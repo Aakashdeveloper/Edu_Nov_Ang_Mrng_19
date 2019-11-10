@@ -2,19 +2,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ProductComponent } from './products/product.component';
-import { MyUpperPipe } from './products/myUpper.pipe';
-import { DiscountPipe } from './products/myDiscountPipe';
-import { ProductSearchPipe } from './products/myfilter.pipe';
-import { ProductService } from './products/product.service';
-import { StarComponent } from './shared/star.component';
-import { ChangeColorDirective } from './products/ChangeColor.directive';
 import { HomeComponent } from './home/home.component';
-import { OrdersComponent } from './orders/orders.component';
-import { OrderpipePipe } from './orders/orderpipe.pipe';
+import { ProductModule } from './products/product.module';
+import { OrderModule } from './orders/order.module';
+import { NotFoundComponent } from './shared/notFound.component';
 
 @NgModule({
     // All module will declare here
@@ -22,32 +16,20 @@ import { OrderpipePipe } from './orders/orderpipe.pipe';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forRoot([
-            {path: 'product', component: ProductComponent},
-            {path: 'order', component: OrdersComponent},
-            {path: 'home', component: HomeComponent},
-            {path: '', redirectTo: 'home', pathMatch: 'full'}
-        ])
+        AppRoutingModule,
+        ProductModule,
+        OrderModule
     ],
 
     // All Component/pipe/directive
     declarations: [
         AppComponent,
         HomeComponent,
-        ProductComponent,
-        MyUpperPipe,
-        DiscountPipe,
-        ProductSearchPipe,
-        StarComponent,
-        ChangeColorDirective,
-        OrdersComponent,
-        OrderpipePipe
+        NotFoundComponent
     ],
 
     // All Services
-    providers: [
-        ProductService
-    ],
+    providers: [],
 
     // Only main component
     bootstrap: [

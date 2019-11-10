@@ -41,7 +41,11 @@
                             [style.width.px]="imageWidth"
                             *ngIf="showImage" />
                         </td>
-                        <td appChangeColor>{{prod.productName | myTextUpper:'lower'}}</td>
+                        <td appChangeColor>
+                            <a [routerLink]="['/product',prod.productId]">
+                                {{prod.productName | myTextUpper:'lower'}}
+                            </a> 
+                        </td>
                         <td>{{prod.productCode |  myTextUpper:'upper'}}</td>
                         <td>{{prod.releaseDate | date}}</td>
                         <td [ngStyle]="{'background-color':prod.price<20?'lightpink':'lightgreen'}">
@@ -63,6 +67,8 @@
 </div>
 
 <!--
+     [queryParams]="{name:prod.productName,Img:prod.imageUrl,
+                            desc:prod.description}"
 <div class="row">
     <div class="col-md-4 col-xs-12 col-sm-6">
         <input type="text"/>
