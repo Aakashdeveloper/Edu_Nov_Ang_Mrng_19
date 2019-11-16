@@ -231,8 +231,7 @@ login/logout
 testing
 deployment
 
-localization
-i18en
+
 
 
 /********
@@ -267,3 +266,35 @@ ng g s home /ng generate service home
 ng g p home /ng generate pipe home
 ng g d home /ng generate directive home
 ng g m home /ng generate module home
+
+
+git checkout -b testbranch
+
+
+ng-untouched ng-pristine ng-valid
+ng-touched   ng-dirty    ng-invalid
+
+
+// Regex
+^([0-9]{10})$
+
+^([a-zA-Z0-9]+)$
+
+^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$
+
+npm i -g json-server
+
+json-server --watch db.json --port 8900
+
+
+Register
+Login
+Profile page
+Admin user can add new admin user
+All other user will be normal user
+Admin use can see all the users
+Without login no one can got to profile page
+
+
+////To Build Application
+> npm run build

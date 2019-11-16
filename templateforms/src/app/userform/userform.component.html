@@ -1,0 +1,125 @@
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Employee Form
+    </div>
+    <div class="panel-body">
+        <form #form="ngForm"  (submit)="submitForm(form)">
+
+            <div class="form-group" [class.has-error]="firstName.invalid">
+                <label for="fname"
+                class="control-label">
+                    FirstName
+                </label>
+                <input type="text" placeholder="firstname"
+                class="form-control"
+                name="firstname"
+                [ngModel]="myUser.firstname"
+                (ngModelChange)="firstToUpper($event)"
+                required
+                #firstName="ngModel"
+                id="fname"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="firstName.invalid">
+                FirstName is Required
+            </div>
+            <div>
+                <h3>{{firstName.invalid}}</h3>
+                <h3>{{firstName.className}}</h3>
+            </div>
+            <div class="form-group">
+                <label for="lname">
+                    LastName
+                </label>
+                <input type="text" placeholder="lastname"
+                class="form-control"
+                [(ngModel)]="myUser.lastname"
+                name="lastname"
+                id="lname"/>
+            </div>
+            <div class="form-group" [class.has-error]="emailp.invalid && emailp.touched">
+                    <label for="email"
+                    class="control-label">
+                        Email
+                    </label>
+                    <input type="text" placeholder="email"
+                    class="form-control"
+                    [(ngModel)]="myUser.email"
+                    pattern="^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$"
+                    name="email"
+                    #emailp="ngModel"
+                    id="email"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="emailp.invalid && emailp.touched">
+                   Please enter valid Email
+                </div>
+            <div class="form-group"
+                [class.has-error]="password.invalid && password.touched">
+                    <label for="pwd"
+                    class="control-label">
+                        Password
+                    </label>
+                    <input type="password" placeholder="password"
+                    class="form-control"
+                    minlength="5"
+                    name="password"
+                    #password="ngModel"
+                    [(ngModel)]="myUser.password"
+                    id="pwd"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+                    Min Length is 5
+                </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="fulltime"
+                    name="jobType"
+                    value="fulltime"
+                    [(ngModel)]="myUser.jobType"
+                    />FullTime
+                </label>
+            </div> 
+            <div class="radio">
+                <label>
+                    <input type="radio"
+                        name="gender"
+                        [(ngModel)]="myUser.gender"
+                        value="female"/>Female
+                </label>
+            </div>   
+            <div class="radio">
+                <label>
+                    <input type="radio"
+                    name="gender"
+                    [(ngModel)]="myUser.gender"
+                    value="male"/>Male
+                </label>
+            </div> 
+            <div class="form-group" [class.has-error]="hasCodelangError">
+                <label for="code"
+                class="control-label">
+                    Code Lang
+                </label>
+                <select class="form-control"
+                    name="codelang"
+                    [(ngModel)]="myUser.codelang"
+                    (blur)="validateCodeLang($event)"
+                    id="code">
+                    <option value="default">Please select Language</option>
+                    <option *ngFor="let lang of languages">
+                        {{lang}}
+                    </option>
+                    
+                </select>
+                <div class="alert alert-danger" *ngIf="hasCodelangError">
+                      Please select valid option
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success"
+                [disabled]="hasCodelangError">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>

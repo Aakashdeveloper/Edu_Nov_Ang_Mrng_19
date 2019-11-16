@@ -1,0 +1,34 @@
+{
+  "user": [
+    {
+      "firstname": "John",
+      "lastname": "Eva",
+      "email": "a@a.com",
+      "password": "12345",
+      "jobType": true,
+      "gender": "male",
+      "codelang": "Node",
+      "id": 1
+    },
+    {
+      "firstname": "Aakash",
+      "lastname": "Eva",
+      "email": "a@a.com",
+      "password": "12345",
+      "jobType": true,
+      "gender": "male",
+      "codelang": "Node",
+      "id": 2
+    },
+    {
+      "firstname": "Aakash",
+      "lastname": "Eva",
+      "email": "a@a.com",
+      "password": "12345",
+      "jobType": true,
+      "gender": "male",
+      "codelang": "Node",
+      "id": 3
+    }
+  ]
+}
