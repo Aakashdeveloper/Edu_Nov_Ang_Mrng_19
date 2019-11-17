@@ -298,3 +298,20 @@ Without login no one can got to profile page
 
 ////To Build Application
 > npm run build
+
+/usr/local/etc/nginx/nginx.conf
+C:\nginx\conf\sites-enabled
+
+server {
+        listen       8081;
+        server_name  localhost;
+
+        location / {
+	     root   /var/www/react-app;
+         index  index.html index.htm;
+        }
+    }
+
+docker build -t . novang
+docker image ls 
+docker run -p 8086:4200 imageid

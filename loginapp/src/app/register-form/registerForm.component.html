@@ -1,0 +1,65 @@
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Register Form
+    </div>
+    <div class="panel-body">
+        <form #form="ngForm"  (submit)="submitForm(form)">
+
+            <div class="form-group" [class.has-error]="firstName.invalid">
+                <label for="fname"
+                class="control-label">
+                    FirstName
+                </label>
+                <input type="text" placeholder="firstname"
+                class="form-control"
+                name="name"
+                [(ngModel)]="myUser.name"
+                required
+                #firstName="ngModel"
+                id="fname"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="firstName.invalid">
+                FirstName is Required
+            </div>
+           
+            <div class="form-group" [class.has-error]="emailp.invalid && emailp.touched">
+                    <label for="email"
+                    class="control-label">
+                        Email
+                    </label>
+                    <input type="text" placeholder="email"
+                    class="form-control"
+                    [(ngModel)]="myUser.email"
+                    pattern="^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$"
+                    name="email"
+                    #emailp="ngModel"
+                    id="email"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="emailp.invalid && emailp.touched">
+                   Please enter valid Email
+                </div>
+            <div class="form-group"
+                [class.has-error]="password.invalid && password.touched">
+                    <label for="pwd"
+                    class="control-label">
+                        Password
+                    </label>
+                    <input type="password" placeholder="password"
+                    class="form-control"
+                    minlength="5"
+                    name="password"
+                    #password="ngModel"
+                    [(ngModel)]="myUser.password"
+                    id="pwd"/>
+            </div>
+            <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+                    Min Length is 5
+                </div>
+            <button type="submit" class="btn btn-success"
+                [disabled]="hasCodelangError">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
